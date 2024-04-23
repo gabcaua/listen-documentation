@@ -1,0 +1,34 @@
+{
+  "index": "Getting Started",
+  "how-to-commands": "How to use commands",
+  "playing-a-song": "Playing your first song",
+  "configuration": "Configuration",
+  "commands": "Commands",
+  "faq": {
+    "type": "separator",
+    "title": "FREQUENT ISSUES"
+  },
+
+
+
+
+
+
+
+
+
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "type": "page"
+  },
+  "terms-of-use": {
+    "title": "Terms of Use",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact my Developer ↗",
+    "type": "page",
+    "href": "https://twitter.com/imgabcaua",
+    "newWindow": true
+  }
+}

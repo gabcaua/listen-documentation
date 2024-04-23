@@ -1,0 +1,33 @@
+---
+title: Playing a song
+description: Learn how to play a song on Listen.
+---
+
+import { Callout, Steps, Tabs } from "nextra/components";
+
+# Play a song or playlist
+
+<Callout type="info">
+  Listen can only play _some_ audio files and downloadable, copyright-free,
+  SoundCloud links.\
+  Listen can't play videos. Instead, Listen will smartly
+  search for a similar audio on SoundCloud and play it.
+</Callout>
+
+    ### Use the <span style={{color: "green"}}>`/play`</span> command
+    There are two ways to run the `play` command:
+    <Tabs items={['Natural Language', 'Slash Command']}>
+        <Tabs.Tab>
+            You can ask Listen to add a song to the queue in your name by sending **`Listen play`** + the name of the song you want to play in a text channel. Example: **`Listen, play`** `Why we Lose - Cartoon (NCS)`
+            <Callout type="info">
+            To keep Listen's understanding of human, natural language, consider [donating](https://patreon.com/iamcaua).
+            </Callout>
+        </Tabs.Tab>
+        <Tabs.Tab>
+            <Callout type="info">
+            Simply use the slash command **`/play`** and follow the instructions in the menu.
+
+            <img src="/how-to-play/play-by-slash.png" style={{borderRadius: "12px"}}/>
+            </Callout>
+        </Tabs.Tab>
+    </Tabs>
