@@ -1,6 +1,12 @@
 import nextra from "nextra";
+/**
+ * @type {import('next').NextConfig}
+ */
 
 const withNextra = nextra({
+  /**
+   * @type {import('next').NextConfig}
+   */
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
   latex: true,
@@ -11,6 +17,9 @@ const withNextra = nextra({
 });
 
 export default withNextra({
+  /**
+   * @type {import('next').NextConfig}
+   */
   reactStrictMode: true,
   eslint: {
     // ESLint behaves weirdly in this monorepo.

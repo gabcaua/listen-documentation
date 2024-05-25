@@ -8,23 +8,9 @@
     "type": "separator",
     "title": "FREQUENT ISSUES"
   },
+  "playback-problems": "Problems with audio playback",
+  "other-problems": "Other",
 
-
-
-
-
-
-
-
-
-  "privacy-policy": {
-    "title": "Privacy Policy",
-    "type": "page"
-  },
-  "terms-of-use": {
-    "title": "Terms of Use",
-    "type": "page"
-  },
   "contact": {
     "title": "Contact my Developer ↗",
     "type": "page",

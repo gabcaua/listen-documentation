@@ -9,11 +9,34 @@ const config = {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
     const url =
-      "https://my-app.com" +
+      "https://www.guide.listen.cgsilva.com.br" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
 
     return (
       <>
+        {/* Primary Meta Tags */}
+        
+        <meta
+          name="title"
+          content={frontMatter.title || "Listen Official Guide"}
+        />
+        <meta
+          name="description"
+          content="Official documentation and tutorials for Listen. Learn how to set up and use Listen for your server. Get help with features, commands, and more."
+        />
+        <meta
+          name="keywords"
+          content="listen, discord bot, documentation, guide, tutorials"
+        />
+
+        {/* Google Search Console */}
+        <meta
+          name="google-site-verification"
+          content="your-google-site-verification-code"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={url} />
         <meta
           property="og:title"
@@ -21,10 +44,29 @@ const config = {
         />
         <meta
           property="og:description"
-          content={frontMatter.description || "Get help "}
+          content="Official documentation and tutorials for Listen. Learn how to set up and use Listen for your server. Get help with features, commands, and more."
         />
+        <meta property="og:image" content="/open-graph-image.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta
+          property="twitter:title"
+          content={frontMatter.title || "Listen Official Guide"}
+        />
+        <meta
+          property="twitter:description"
+          content="Official documentation and tutorials for Listen. Learn how to set up and use Listen for your server. Get help with features, commands, and more."
+        />
+        <meta property="twitter:image" content="/twitter-image.png" />
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
+        <link rel="favicon" href="/favicon.png" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={url} />
       </>
     );
   },
@@ -33,8 +75,8 @@ const config = {
 
   useNextSeoProps() {
     return {
-      titleTemplate: '%s – Listen Official Guide'
-    }
+      titleTemplate: "%s – Listen Official Guide",
+    };
   },
 
   chat: {
@@ -43,7 +85,11 @@ const config = {
 
   /* Kinda morbid, less frequency sensible code by design: */
 
-  docsRepositoryBase: null,
+  docsRepositoryBase: "https://github.com/gabcaua/listen-documentation",
+
+  banner: {
+    text: "🎉  The next update of Listen is coming soon."
+  },
 
   feedback: {
     content: null,
@@ -63,7 +109,7 @@ const config = {
     light: 250,
   },
   primarySaturation: {
-    dark: 85,
+    dark: 95,
     light: 100,
   },
 

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.guide.listen.cgsilva.com.br
+
+# Sitemaps
+Sitemap: https://www.guide.listen.cgsilva.com.br/sitemap.xml

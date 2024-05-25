@@ -1,0 +1,103 @@
+---
+title: Solving audio playback problems
+description: This article aims to teach you how to diagnose and solve problems with the audio playback.
+---
+
+import { Callout, Steps, Tabs, Cards, Card } from "nextra/components";
+
+# Solving audio playback problems
+
+As an audio player bot, Listen has to consistently maintain real-time audio frames every second.\
+**Region, audio effects, volume** and other settings can all affect the playback frames quality.
+
+<Callout type="warning" emoji="">
+  This article is not a complete solution, but it's a good starting point.
+</Callout>
+
+<Callout type="info">
+  Feel free to ask for direct support to our team [here](https://discord.gg/Ka9jGb2ZkA).
+</Callout>
+
+To solve this issue, continue reading this article:
+
+## Diagnosing the problem
+
+<Steps>
+### Access Listen's industry-leading performance tool
+Type **`/listen` `performance`**\
+This command provides useful information and statistics about performance.\
+To continue the troubleshooting process, follow the **<span style={{color: "green"}}>tutorial</span>** carefully.
+
+<Callout type="info">
+<span style={{fontWeight: 650, fontSize: "1.2em", background: "linear-gradient(90deg, #D855F9 -50%, #F9D855 200%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", textFillColor: "transparent"}}>Reference</span>
+
+![](/faq/performance-tool-snapshot.png)
+</Callout>
+
+**Here you can check if the problem is on our end.**\
+This will help us diagnose the problem faster.
+
+### Finding the problem
+
+To find the problem, we will check for the values highlighted in <span style={{color: "blue"}}>**` code blocks `**</span>
+
+Here's a list of values that can help us diagnose the problem:
+
+ **Values that influence the general user experience**
+
+ - **Main socket:** A number that represents how many milliseconds Listen takes to communicate with the Discord Gateway API. **The lower the better.**
+ - **Execution time:** A number that represents how many milliseconds Listen takes to execute commands.\
+ **The lower the better.**
+ - **Memory usage:** A number that represents how much memory Listen uses. **No impact whatsover.**
+
+ **Values about the RTC (Real-Time Connection) between Listen, Discord and you** 
+
+ - **Latency:** A number that represents how many milliseconds Listen takes to communicate with her own Remote Audio Servers (Powered by [Lavalink](https://lavalink.dev/) technology). **The lower the better.**
+ - **Destination:** Exposes the audio destination, indicating the region the voice channel is in (example `brazil001.discord.media`). **Near to you is better.**
+
+ **Values from the Remote Audio Server attached to your voice channel**
+
+ These values are only available if you are connected to a voice channel.\
+ They will help us diagnose the problem faster.\
+ We will check for signs of **stress** or **high load**.
+
+#### RTC Debugging
+ - **Sent frames** indicate how many **healthy** audio frames have been sent to the server, example `2.970 [99.00%]`. It maxes out to 3.000 (100%). **Higher is better.**
+ - **Lost or accelerated frames** indicate how many audio frames have been lost or accelerated. **Lower is better.**
+ <Callout type="info">
+ High **lost or accelerated frames** is a sign of stress caused from **audio effects** and **volume**.
+ </Callout>
+#### Processing load
+ - **RTC Playback** indicate how much CPU load the server is needing to process audio. **Lower is better.**
+ <Callout type="info">
+ High **processing load** is a clear sign of stress caused from the decoding of multiple **unoptimized** audio formats (like .mp3 and .aac) concurrently. This affects the playback of files uploaded by users.
+ </Callout>
+#### Remote player memory
+ - **Allocated** and **Used** indicate how much memory Listen is using. **Higher is better.**
+ <Callout type="info">
+ High **Used** is a sign of stress caused from **multiple players**.
+ </Callout>
+#### Existing voice sessions
+ - Reveals how many servers are attached to this node. **Lower is better.**
+
+### Solving the problem
+
+After checking the problem, you can try **disabling some audio filters** and **setting the volume filter to 100%** will reduce lost or accelerated audio frames. You can also change the Region of your voice channel, or use a different voice channel.
+
+
+### Checking if the problem is on your end
+
+If it still doesn't help, you might need to **reconnect** to your voice channel or free up some resources in your device, such as **CPU**, as it is responsible for real time audio processing and latency.
+
+Sometimes, if a processor is not powerful enough to process audio, it will lose audio frames more often as Listen's buffer is emitted in a 200 milliseconds interval.
+
+Also, your network's latency may be too high to support seamless, lag-free and real-time Voice over Internet Protocol (VoIP) connections.
+
+</Steps>
+
+## If you still have a problem
+
+Feel free to reach out to us.\
+Our team is dedicated to offer you the best experience.
+
+Discover. Play. **Listen.**
